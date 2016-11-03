@@ -16,6 +16,7 @@ $DB_ID = mysql_connect($server, $user, $pw);
     } else {
         mysql_query("use $db", $DB_ID);
         mysql_query('set names utf8');
+        mysql_query("UPDATE Fragen SET Active=0");
         mysql_query("UPDATE Fragen SET Active=1 WHERE ID=$id");
         if(mysql_errno()) {
             echo mysql_error();

@@ -1,3 +1,4 @@
+
 <html>
     <head>
         <title>Quiz</title>
@@ -10,6 +11,10 @@
         a {
             color: #A1B9C5;
         }
+        input[type=text] {
+            font: 70px Arial,sans-serif;
+        }
+            
         input[type=submit] {
             /*cursor: pointer;*/
             font: 50px Arial,sans-serif;
@@ -131,15 +136,17 @@ if(isset($_GET['user']))
 } else {
     ?>
     <form action='createUser.php' method='GET'>
+        <br>
+        <br>
         <table width=100%>
             <tr>
-                <td align="center">Benutzernamen eingeben:</td>
+                <td align="center"><div style="font: 70px Arial,sans-serif;">Benutzernamen eingeben:</div><br><br></td>
             </tr>
             <tr>
-                <td align="center"><input style="width: 100%" type='text' name='name' value=''></td>
+                <td align="center"><input style="width: 100%" type='text' name='name' value=''><br><br></td>
             </tr>
             <tr>
-                <td align="center"><input style="width: 100%" type='submit' value='Anmelden'></td>
+                <td align="center"><input style="width: 100%; font: 100px Arial,sans-serif;" type='submit' value='Anmelden'></td>
             </tr>
         </table>
     </form>
