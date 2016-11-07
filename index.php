@@ -39,7 +39,7 @@ if(isset($_GET['user']))
     $server = "localhost";
     $user = "allinone";
     $pw = "cAf8HBs5EqvKppec";
-    $db = "Quiz";
+    $db = "quiz";
     
     $u_id = "0";
     $DB_ID1 = mysql_connect($server, $user, $pw);
@@ -88,7 +88,7 @@ if(isset($_GET['user']))
                                 <td colspan="2" align="center" height=10%><h1>Die Anwort zu dieser Frage wurde bereits abgegeben</h1></td>
                             </tr>
                             <tr>
-                                <td colspan="2" align="center" height=10%><A HREF="javascript:history.go(0)">Aktualisieren</A></td>
+                                <td colspan="2" align="center" height=10%><A HREF="javascript:location.reload(true)">Aktualisieren</A></td>
                             </tr>
                         </table>
                     <?php
@@ -111,7 +111,7 @@ if(isset($_GET['user']))
                                 <input hidden="true" type='text' name='name' value='<?php echo $_GET['user']; ?>'>
                                 <input hidden="true" type='text' name='frage' value='<?php echo $zeile[0]; ?>'>
                                 <tr>
-                                    <td colspan="2" align="center" height=10%><A HREF="javascript:history.go(0)">Aktualisieren</A></td>
+                                    <td colspan="2" align="center" height=10%><A HREF="javascript:location.reload(true)">Aktualisieren</A></td>
                                 </tr>
                             </table>
                         </form>
@@ -127,7 +127,7 @@ if(isset($_GET['user']))
                 <td><h1>Aktuell keine Frage freigeschaltet</h1></td>
             </tr>
             <tr>
-                <td align="center" height=10%><A HREF="javascript:history.go(0)">Aktualisieren</A></td>
+                <td align="center" height=10%><A HREF="javascript:location.reload(true)">Aktualisieren</A></td>
             </tr>
         
         <?php

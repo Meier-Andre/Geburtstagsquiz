@@ -65,7 +65,7 @@ if($DB_ID == false) {
         ?>
             </body></html><?php
     } else {
-        header( 'Location: http://192.168.178.40/quiz/index.php?user='.$_GET["name"].'');
+        header( 'Location: http://192.168.178.20/quiz/index.php?user='.$_GET["name"].'');
         $DB_ID = mysql_connect($server, $user, $pw);
         if($DB_ID == false) {
         echo "Öffnen der DB fehlgeschlagen<br>";
@@ -76,7 +76,7 @@ if($DB_ID == false) {
             if(mysql_errno()) {
                 echo mysql_error();
             } else {
-                //echo "Die daten wurden erfolgreich eingetragen";
+                echo "Die Daten wurden erfolgreich eingetragen";
             }
         }
     }

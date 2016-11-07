@@ -1,13 +1,13 @@
 <?php
 
-header( 'Location: http://192.168.178.40/quiz/index.php?user='.$_POST["name"].'');
+header( 'Location: http://192.168.178.20/quiz/index.php?user='.$_POST["name"].'');
 $name = $_POST["name"];
 $frage = $_POST["frage"];
 
 $server = "localhost";
 $user = "allinone";
 $pw = "cAf8HBs5EqvKppec";
-$db = "Quiz";
+$db = "quiz";
 
 $u_id = "0";
 $DB_ID = mysql_connect($server, $user, $pw);

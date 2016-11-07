@@ -112,13 +112,13 @@ if($DB_ID == false) {
                     
         </form>
         <?php
-     // content="text/plain; charset=utf-8"
+     //    content="text/plain; charset=utf-8";
         
         mysql_close($DB_ID);
         
         include "libchart/classes/libchart.php";
 
-        //header("Content-type: image/png");
+      //  header("Content-type: image/png");
 
         $chart = new VerticalBarChart(1500,400);
         $dataSet = new XYDataSet();
@@ -155,6 +155,26 @@ if($DB_ID == false) {
         <?php
     } else {
         echo "Keine Frage mehr vorhanden";
+
+        $DB_ID = mysql_connect($server, $user, $pw);
+        mysql_query("use $db", $DB_ID);
+        mysql_query('set names utf8');
+        $result = mysql_query("SELECT name, (SELECT COUNT(*) FROM Fragen JOIN Antworten WHERE Antworten.U_ID = User.ID AND Fragen.ID = Antworten.F_ID AND Fragen.Antwort = Antworten.Antwort ) AS points FROM User Order BY points DESC ");
+
+        if ($result)
+        {
+            print "<table border=\"1\" cellspacing=\"2\" "."cellpadding=\"5\" WIDTH=\"100\%\" >\n";
+
+            print "<tr><th>Name</th><th>Punkte</th></tr>\n";
+        }
+
+        while ($dataset = mysql_fetch_array($result))
+        {
+            print "<tr>";
+            print "<td>".$dataset['name']."</td>";
+            print "<td>".$dataset['points']."</td>";
+            print "</tr>\n";
+        }
     }
 }
                 

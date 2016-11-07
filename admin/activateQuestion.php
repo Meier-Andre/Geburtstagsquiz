@@ -6,7 +6,7 @@ $id = $_POST["ID"];
 $server = "localhost";
 $user = "allinone";
 $pw = "cAf8HBs5EqvKppec";
-$db = "Quiz";
+$db = "quiz";
 
 $DB_ID = mysql_connect($server, $user, $pw);
 
